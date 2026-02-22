@@ -1,0 +1,78 @@
+# BNT - .gitignore v20260115
+
+# Build / Binary artifacts
+bin/
+obj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / Rider / JetBrains
+.vs/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# VSCode (local settings only - workspace is committed separately)
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.json  # keep this ignored if it contains machine paths
+
+# Editor & OS junk
+.DS_Store
+Thumbs.db
+*.tmp
+~*
+*.bak
+
+# PowerShell specific
+*.pssession.xml
+*.ps1xml
+*.psc1
+*.psd1
+*.psm1.bak
+
+# Logs & output from MemMan scripts
+logs/
+output/
+*.log
+StandbyMemory-Clear.log
+mem-snapshot.csv
+
+# Secrets & credentials (NEVER commit)
+.env
+*.env
+*.credentials*
+*.pem
+*.key
+*.pfx
+*.cer
+*.secret*
+config.user.json
+*.json.user
+
+# Package managers
+nuget.config
+packages/
+*.nupkg
+*.zip
+
+# Multi-cloud local caches (outside repo anyway, but safety)
+.aws/
+.azure/
+.gcloud/
+.terraform/
+
+# Misc
+*.pdb
+*.dll
+msbuild.binlog
