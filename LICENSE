@@ -1,0 +1,223 @@
+# BRAIN NXTGEN TECHNOLOGIES – LICENSE  
+Version: v20260115  
+Scope: BNT MemMan Toolkit – Windows RAM & Standby List Optimizer  
+Website: https://brainng.one  
+
+***
+
+## 1. Overview
+
+This LICENSE defines the licensing structure for the **BNT MemMan Toolkit – Windows RAM & Standby List Optimizer** created and published by **BRAIN NXTGEN TECHNOLOGIES (BNT)**.
+
+This toolkit includes but is not limited to:
+
+- PowerShell scripts and automation assets  
+- Windows workstation optimization toolsets and configurations  
+- Documentation, examples, and diagrams  
+- Any related digital product artifacts distributed as part of this repository or product bundle  
+
+By using this project, you agree to the terms defined in this LICENSE and the additional guidance published at:
+
+- Licenses: https://brainng.one/licenses  
+- Terms of Use: https://brainng.one/terms-of-use  
+
+This document is not a substitute for legal advice. For complex or regulated deployments, consult a qualified legal professional.
+
+***
+
+## 2. Ownership and General Terms
+
+Unless explicitly stated otherwise in this repository or product, the following ownership and general conditions apply.
+
+- All content, code, media, and documentation in this project are the intellectual property of **BRAIN NXTGEN TECHNOLOGIES (BNT)**.  
+- Access to and use of the Licensed Material is governed by the license type(s) selected in section **3. License Types**.  
+- “Rights managed” describes licenses where usage is restricted by time, scope, distribution, or other specified conditions.  
+- By using this project, you agree to the applicable terms published at:  
+  - Licenses: https://brainng.one/licenses  
+  - Terms of Use: https://brainng.one/terms-of-use  
+
+Unless explicitly granted, no rights are provided to redistribute, resell, sublicense, or rebrand BNT assets.
+
+***
+
+## 3. License Types
+
+The following license types are defined in BNT’s standard licensing framework.  
+For this project, the applicable license types are explicitly marked.
+
+```text
+[ ] PERSONAL USE – Rights Managed – Personal Use (RM-PU)  
+[x] PERSONAL USE – Donation-based License  
+[x] COMMERCIAL USE – Perpetual  
+[x] COMMERCIAL USE – Subscription  
+[ ] COMMERCIAL USE – Rights Managed – Commercial Use (RM-CU)  
+[ ] COMMERCIAL USE – Rights Managed – Editorial Use (RM-EU)  
+[ ] COMMERCIAL USE – Rights Managed – Retail Use (RM-RU)
+```
+
+### 3.1 Personal Use – Rights Managed – Personal Use (RM-PU)
+
+This project does not use RM-PU as the primary license. The RM-PU model remains part of the BNT framework and may be referenced for compatibility with other BNT assets.
+
+Key points of RM-PU (for reference):
+
+- Type: Rights Managed – Personal Use (RM-PU)  
+- Purpose: Free for strictly personal, ad-free environments.  
+- Not applicable as the main license for this toolkit unless explicitly granted in a written agreement or future revision.
+
+### 3.2 Personal Use – Donation-based Licenses
+
+**This license type applies to BNT MemMan Toolkit.**
+
+- Type: Donation-based licenses (for example PayPal, Stripe, and similar platforms)  
+- Purpose:  
+  - Free for personal use environments, optionally supported by voluntary donations.  
+- Allowed Use Cases (examples):  
+  - Personal Windows 10/11 workstations and lab environments  
+  - Non-commercial learning setups, private productivity workflows, and home lab automation  
+- Key Conditions:  
+  - Same core restrictions as rights-managed personal use (no commercial exploitation or resale).  
+  - Donations do not convert the license into a commercial license.  
+  - Upgrades to commercial rights require a separate commercial license agreement.  
+  - Default License: One (1) installation/connection of each device kind (for example Laptop, Desktop) per user.
+
+### 3.3 Commercial Use – Perpetual License
+
+**This license type applies to BNT MemMan Toolkit.**
+
+- Type: Perpetual  
+- Purpose:  
+  - Perpetual license with one year of updates and standard support from the date of purchase, unless otherwise stated.  
+- Allowed Use Cases (examples):  
+  - Windows Toolkits (commercial use for small and medium enterprises)  
+  - Use on consultant laptops or company-issued workstations supporting customer projects  
+- Key Conditions:  
+  - Perpetual right to use the specified version of the Licensed Material in commercial environments.  
+  - Updates and standard support are provided for one year from purchase; continued updates or extended support may require a maintenance or support agreement.  
+  - License is non-transferable unless explicitly permitted in a written agreement.  
+  - Default License: One (1) installation/connection per device (for example Server, Laptop, Desktop) per license, unless otherwise agreed in writing.
+
+### 3.4 Commercial Use – Subscription License
+
+**This license type applies to BNT MemMan Toolkit.**
+
+- Type: Subscription  
+- Purpose:  
+  - Time-bound subscription providing access, updates, and priority support for the Licensed Material.  
+- Allowed Use Cases (examples):  
+  - Windows Toolkits (commercial use for teams and departments)  
+  - Managed service providers using the toolkit as part of internal operations (not as a resellable SaaS)  
+- Key Conditions:  
+  - Access to updates and priority support continues as long as the subscription remains active and paid.  
+  - Upon subscription lapse, access to new updates and priority support ceases. Existing binaries or scripts may remain usable under the last valid license terms, subject to any specific agreement or restrictions.  
+  - License is non-transferable unless explicitly permitted in a written agreement.  
+  - Default License: One (1) installation/connection per user/device (for example Laptop, Desktop, Server, User) per license.
+
+### 3.5 Commercial Use – Rights Managed – Commercial Use (RM-CU)
+
+Not selected for this toolkit by default.
+
+- Type: Rights Managed – Commercial Use (RM-CU)  
+- Purpose:  
+  - Tailored commercial licensing for BNT assets used in client-specific solutions, enterprise workflows, or high-value deployments with negotiated scope, duration, and support.  
+- Use Cases:  
+  - Embedding BNT toolkits into internal enterprise workflows or managed offerings  
+- Key Conditions:  
+  - Terms defined via a dedicated written agreement or order form.  
+  - Default License: Defined per agreement, not applied here by default.
+
+### 3.6 Commercial Use – Rights Managed – Editorial Use (RM-EU)
+
+Not selected for this toolkit by default.
+
+### 3.7 Commercial Use – Rights Managed – Retail Use (RM-RU)
+
+Not selected for this toolkit by default.
+
+***
+
+## 4. Product-specific Terms
+
+This section defines details specific to **BNT MemMan Toolkit – Windows RAM & Standby List Optimizer**.
+
+### 4.1 Product Identification
+
+- Product / Project Name: BNT MemMan Toolkit – Windows RAM & Standby List Optimizer  
+- Repository or Package ID: bnt-memman-toolkit  
+- Primary License Type:  
+  - Personal: Donation-based License  
+  - Commercial: Perpetual License or Subscription License  
+- First Release Date: 2026-02-22  
+
+### 4.2 Distribution Channel
+
+- Primary distribution channel:  
+  - GitHub repository (source and releases)  
+  - Direct download from https://brainng.one (where applicable)  
+- Supported platforms:  
+  - Windows 10 and Windows 11 (Workstations, laptops, and similar devices)  
+
+### 4.3 Usage Constraints
+
+- Maximum users / seats (if applicable):  
+  - Not limited by this license, subject to the number of purchased seats or devices in the respective commercial agreement.  
+- Permitted deployment scope:  
+  - Personal use: Personal devices and home lab environments.  
+  - Commercial use: Single-tenant or internal multi-tenant environments operated by the licensed entity.  
+- Additional restrictions:  
+  - No resale as SaaS or bundled as a standalone commercial SaaS product.  
+  - No white-labeling or rebranding that removes BNT authorship or misrepresents ownership.  
+  - No redistribution beyond the licensed entity without explicit written consent from BNT.
+
+### 4.4 Attribution
+
+When attribution is required, use the following or a close equivalent:
+
+> “This solution uses assets licensed from BRAIN NXTGEN TECHNOLOGIES (BNT) – https://brainng.one.”
+
+***
+
+## 5. Prohibited Uses
+
+Unless explicitly granted in writing by BNT, you may not:
+
+- Resell, sublicense, or redistribute the Licensed Material as a standalone product.  
+- Claim ownership of BNT intellectual property or remove BNT branding in a way that misrepresents authorship.  
+- Embed the toolkit into public SaaS offerings or marketplace products without a dedicated commercial agreement.  
+- Use the Licensed Material in illegal, harmful, or abusive activities, including but not limited to harassment, discrimination, or violations of privacy and security.  
+- Train or fine-tune AI models using BNT-provided content in ways that directly compete with BNT’s core offerings, unless explicitly permitted in a separate agreement.
+
+***
+
+## 6. Warranty and Liability
+
+The Licensed Material is provided “as is” without warranties of any kind, whether express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.
+
+To the maximum extent permitted by law:
+
+- BNT is not liable for any indirect, incidental, special, consequential, or exemplary damages arising from the use of the Licensed Material.  
+- BNT’s total liability under any license is limited to the amount paid for the specific license, where applicable.
+
+***
+
+## 7. Termination
+
+BNT may terminate your license if you breach the terms outlined here or any applicable written agreement. Upon termination:
+
+- You must cease all use of the Licensed Material.  
+- You must remove the Licensed Material from production environments where required by the specific license type or agreement.  
+
+For ongoing subscriptions, termination and grace periods follow the commercial terms agreed at purchase.
+
+***
+
+## 8. Contact and Further Information
+
+For licensing questions, custom license requests, or enterprise agreements, contact:
+
+- **BRAIN NXTGEN TECHNOLOGIES (BNT)**  
+  - Website: https://brainng.one  
+  - Licenses: https://brainng.one/licenses  
+  - Email: info@brainng.one  
+
+© 2026 BRAIN NXTGEN TECHNOLOGIES (BNT). All rights reserved.
