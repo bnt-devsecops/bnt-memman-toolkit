@@ -1,34 +1,35 @@
 # BNT MemMan Toolkit – Windows RAM & Standby List Optimizer
 
-BNT MemMan Toolkit is a lightweight, PowerShell-native toolkit that keeps
-Windows 11 workstations responsive by reclaiming RAM and standby memory
-without reboots or layout disruption.
+BNT MemMan Toolkit is a lightweight, PowerShell-native collection of scripts and
+configs that reclaim RAM in real time on Windows 11 workstations without
+restarts or layout disruption.
 
 Optimized for:
-
-- Multi-monitor Surface and laptop workstations
-- Multi-cloud IaC workflows (Terraform, Bicep, ARM), VSCode, PowerShell
-- Multi-profile Chrome, Teams, and Office across customer tenants
+- Multi-monitor Surface-class laptops and desktops
+- Multi-cloud IaC (Terraform/Bicep), VSCode, PowerShell
+- Multi-profile Chrome, Teams, Outlook, Office
 
 ## Features
 
-- One-click or scheduled clearing of the Windows Standby List
-- Before/after RAM metrics with append-only logging
-- Integration with EmptyStandbyList.exe, RAMMap, and ISLC
-- Startup and background-app hardening to reduce baseline RAM usage
-- Fast setup for new or rebuilt machines
+- On-demand standby list clear with before/after metrics and logging
+- Scheduled standby list hygiene (SYSTEM scheduled task)
+- Integration with RAMMap and Intelligent Standby List Cleaner (ISLC)
+- Startup and background-app hardening to drop baseline RAM usage
+- One-command setup for new workstations
 
 ## Components
 
-- `Clear-StandbyMemory.ps1` – On-demand standby list clear and logging
-- `Setup-MemoryManagement.ps1` – Download tools, create shortcuts and scheduled task
-- `Optimize-StartupAndBackground.ps1` – Disable non-essential startup/background apps
-- `Get-MemoryReport.ps1` – Memory diagnostic snapshot and CSV export
+- `BNT-Clear-StandbyMemory.ps1` – One-click or hotkey standby list clear
+- `BNT-Setup-MemoryManagement.ps1` – Download tools, create shortcuts & tasks
+- `BNT-Optimize-StartupAndBackground.ps1` – Disable non-essential startup/background apps
+- `BNT-Get-MemoryReport.ps1` – Memory diagnostic report and CSV export
 
-## Quick Start
+## Licensing & Support
 
-1. Clone the repo:
+BNT MemMan Toolkit is available under a commercial-friendly license suitable for:
 
-   ```powershell
-   git clone https://github.com/bnt-devsecops/bnt-memman-toolkit.git
-   cd bnt-memman-toolkit\src
+- Subscription access with updates and priority support
+- Perpetual consulting licenses for client environments
+- Donation-based licenses (PayPal, Stripe, etc.)
+
+See **LICENSE** and visit [https://brainng.one](https://brainng.one/licenses/) for details.
