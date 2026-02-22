@@ -10,7 +10,7 @@ The VS Code Git menu surfaces common actions such as **Pull, Push, Clone, Checko
 This section explains what each does and how you should use it for this toolkit.
 
 ### 1.1 Action meanings and best practices
-### 1.1 Action meanings and best practices
+
 
 | Action | What it means | When you should use it | Command example | Best practice for BNT MemMan |
 |--------|----------------|------------------------|-----------------|------------------------------|
@@ -25,16 +25,9 @@ This section explains what each does and how you should use it for this toolkit.
 | **Tags** | Lightweight markers for specific commits, commonly used for releases. | When you cut a release such as `v1.0.0` and want to mark that commit. | `git tag v1.0.0` then `git push origin v1.0.0` | Use tags only for release points so version history stays clean and meaningful. |
 
 
-> Tip: In your markdown renderer (GitHub, VS Code preview) the `<br>` tags inside code fences are not necessary; if they render oddly you can switch each ` ```powershell<br>…<br>``` ` back to a standard multi-line code block:
->
-> ```powershell
-> git pull
-> ```
-
 ---
-You can choose whichever style looks best in your target renderer. For GitHub, the simple form above is recommended.
 
-# BNT MemMan Toolkit – VS Code Git Menus Explained
+## 1.2 BNT MemMan Toolkit – VS Code Git Menus Explained
 
 This reference maps the VS Code Source Control context menus to Git concepts and shows how you should use them in real projects (dev, staging, prod).
 
@@ -268,7 +261,7 @@ Even as a single maintainer, use **feature branches and pull requests** to maint
 
 ### 3.2 Basic PR workflow
 
-### 3.2 Basic PR workflow
+
 
 | Step | Action | Example | Best practice |
 |------|--------|---------|--------------|
