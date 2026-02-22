@@ -492,5 +492,76 @@ Guideline for BNT MemMan Toolkit:
 - Use `-rcN` tags when coordinating with customers who need to test new features in staging before production.  
 - Document which tag is recommended for each environment in your customer runbooks or deployment guides.
 
+Here is an additional section you can append to `docs/git-usage-and-workflow.md` to cover merge, cleanup, and deletion. It fits the same style as the rest of the guide.
+
+***
+
+## 9. After merging: cleanup and branch deletion
+
+Once a feature branch has been merged into `main` via a pull request, you should clean up both local and remote branches. This keeps the repo tidy and reduces confusion for you and for customers.
+
+### 9.1 Update local main after merge
+
+After merging the PR in GitHub:
+
+```powershell
+# Switch back to main locally
+git checkout main
+
+# Pull the latest commits from GitHub, including the merge
+git pull
+```
+
+Result:
+
+- Your local `main` now includes all changes from the merged feature branch.
+
+### 9.2 Delete the local feature branch
+
+If the branch still exists locally:
+
+```powershell
+# List local branches
+git branch
+
+# Delete the local feature branch
+git branch -d feature/git-workflow-docs
+```
+
+Notes:
+
+- `-d` is a safe delete; it refuses if the branch is not merged yet.  
+- If Git confirms the branch is gone, you are finished locally.  
+- If you get an error saying the branch does not exist, it was already removed (for example by an earlier command).
+
+### 9.3 Delete the remote feature branch
+
+Clean up the remote branch on GitHub so only active branches remain:
+
+```powershell
+git branch -r              # show remote branches
+
+git push origin --delete feature/git-workflow-docs
+```
+
+Result:
+
+- `origin/feature/git-workflow-docs` is removed from GitHub.  
+- `git branch -r` should now show only `origin/HEAD -> origin/main` and `origin/main` (plus any other active branches).
+
+### 9.4 Summary: end-to-end feature lifecycle
+
+| Stage | Command(s) | Purpose |
+|-------|------------|---------|
+| Create feature branch | `git checkout main` → `git pull` → `git checkout -b feature/<name>` | Start new work from up-to-date main. |
+| Develop and commit | `git add .` → `git commit -m "Message"` | Record changes on the feature branch. |
+| Publish branch | `git push -u origin feature/<name>` | Make the branch visible on GitHub. |
+| Open PR | GitHub UI or `gh pr create` | Propose merging feature into `main`. |
+| Merge PR | GitHub UI or `gh pr merge` | Integrate changes into `main`. |
+| Update local main | `git checkout main` → `git pull` | Bring local `main` up to date. |
+| Delete local branch | `git branch -d feature/<name>` | Remove local pointer after merge. |
+| Delete remote branch | `git push origin --delete feature/<name>` | Remove branch from GitHub. |
+
+Following this lifecycle for every feature keeps history clear, ensures `main` stays as the single source of truth, and avoids long lists of stale branches in both VS Code and GitHub.
 
 [Back to top](#bnt-memman-toolkit--git-usage-and-workflow)
