@@ -370,4 +370,127 @@ git push origin --delete feature/v1.1-gui
 
 Cleaning up branches regularly keeps your GitHub repo and VS Code branch list readable.
 
+Here is a self-contained section you can append to `docs/git-usage-and-workflow.md`. It explains tags, semantic versioning, and `-rc` conventions, with concrete commands and best practices.
+
+***
+
+## 8. Tagging and releases for BNT MemMan Toolkit
+
+Tags mark *release points* in your Git history. They let you and your customers say “use exactly this version” and reliably return to the same commit later.
+
+### 8.1 Version naming (semantic versioning)
+
+For BNT MemMan Toolkit, use **semantic versioning**:
+
+- `MAJOR.MINOR.PATCH`
+  - **MAJOR** – breaking changes (behavior changes, removed scripts, incompatible parameters).  
+  - **MINOR** – new features or improvements that remain backward compatible.  
+  - **PATCH** – bugfixes and small non-breaking changes.
+
+Examples:
+
+- `v1.0.0` – first public release.  
+- `v1.1.0` – adds a GUI wrapper but does not break existing scripts.  
+- `v1.1.1` – fixes a bug in `BNT-Setup-MemMan.ps1` without changing behavior otherwise.
+
+You can also add suffixes for pre-release versions:
+
+- `-alpha` – early experimental build, not ready for customer use.  
+- `-beta` – feature-complete but still under test.  
+- `-rc1`, `-rc2` – **release candidate** builds, almost ready for production.
+
+Examples:
+
+- `v1.1.0-rc1` – first release candidate for v1.1.0.  
+- `v1.1.0-rc2` – second candidate after adjusting based on feedback.  
+- `v1.1.0` – final released version after confirming rc is stable.
+
+### 8.2 Creating and pushing tags
+
+#### 8.2.1 Tagging a final release (for example v1.0.0)
+
+After you have merged all changes into `main` and verified the toolkit on at least one clean workstation:
+
+```powershell
+# Ensure you are on the correct commit (main, fully up to date)
+git checkout main
+git pull
+
+# Create a lightweight tag named v1.0.0 on the current commit
+git tag v1.0.0
+
+# Push the tag to GitHub so it is visible remotely
+git push origin v1.0.0
+```
+
+Result:
+
+- GitHub now shows a tag `v1.0.0`.  
+- You can create a GitHub Release based on that tag and attach binaries, screenshots, or release notes if needed.
+
+#### 8.2.2 Tagging a release candidate (for example v1.1.0-rc1)
+
+When you want customers or colleagues to test a candidate build:
+
+```powershell
+git checkout main
+git pull
+
+git tag v1.1.0-rc1
+git push origin v1.1.0-rc1
+```
+
+Communicate clearly:
+
+- Staging/test environments: deploy `v1.1.0-rc1`.  
+- Production: stay on the last stable tag (for example `v1.0.0`) until RC is validated.
+
+When you are satisfied with the RC, you can tag the same commit (or a slightly updated one) as the final:
+
+```powershell
+git tag v1.1.0
+git push origin v1.1.0
+```
+
+### 8.3 Viewing and using tags
+
+Common commands:
+
+```powershell
+# List all tags in the repo
+git tag
+
+# Show which commit a tag points to
+git show v1.0.0
+
+# Check out a specific version in a detached HEAD state (for inspection or testing)
+git checkout v1.0.0
+```
+
+Best practice:
+
+- For **testing** on another machine, you can clone the repo and check out a tag to verify exactly that version.  
+- For **development**, always switch back to a branch after testing:
+
+  ```powershell
+  git checkout main
+  ```
+
+### 8.4 How tags map to dev / staging / production
+
+For customer-facing environments, you can adopt this pattern:
+
+| Environment | What to deploy | Tag examples | Notes |
+|------------|----------------|--------------|-------|
+| **Development** | Branches (`main`, `feature/...`) or occasional RC tags. | `main`, `feature/v1.2-api`, `v1.1.0-rc1` | Flexible, can accept breaking changes while actively developing. |
+| **Staging / UAT** | Release candidates and final tags. | `v1.1.0-rc1`, `v1.1.0` | Used to validate changes before they reach production. |
+| **Production** | Only stable, fully tested tags. | `v1.0.0`, `v1.1.0`, `v1.1.1` | No `-alpha`, `-beta`, or `-rc` suffixes. Changes are planned and reversible. |
+
+Guideline for BNT MemMan Toolkit:
+
+- Use tags for every public or customer-visible release.  
+- Use `-rcN` tags when coordinating with customers who need to test new features in staging before production.  
+- Document which tag is recommended for each environment in your customer runbooks or deployment guides.
+
+
 [Back to top](#bnt-memman-toolkit--git-usage-and-workflow)
