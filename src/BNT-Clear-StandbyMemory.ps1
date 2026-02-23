@@ -263,7 +263,12 @@ if ($beforeMetrics -and $afterMetrics) {
 #region Build and write log entry
 
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
-$logEntry  = "$timestamp | Type=$Type | Before=${($beforeMetrics.FreeMB)}MB free | After=${($afterMetrics.FreeMB)}MB free | Reclaimed=${reclaimedMB}MB | Elapsed=${elapsedMs}ms | Success=$success"
+
+$beforeFree = if ($beforeMetrics) { $beforeMetrics.FreeMB } else { "<n/a>" }
+$afterFree  = if ($afterMetrics)  { $afterMetrics.FreeMB }  else { "<n/a>" }
+
+$logEntry = "$timestamp | Type=$Type | Before=$beforeFree MB free | After=$afterFree MB free | Reclaimed=${reclaimedMB}MB | Elapsed=${elapsedMs}ms | Success=$success"
+
 
 if ($LogPath) {
     Write-BntLogEntry -Path $LogPath -Entry $logEntry
@@ -281,13 +286,15 @@ if (-not $Silent) {
 
     if ($beforeMetrics) {
         Write-Host ("  Before       : {0} MB free  ({1}% used)" -f $beforeMetrics.FreeMB, $beforeMetrics.UsedPercent) -ForegroundColor Yellow
-    } else {
+    }
+    else {
         Write-Host "  Before       : <unavailable>" -ForegroundColor Yellow
     }
 
     if ($afterMetrics) {
         Write-Host ("  After        : {0} MB free  ({1}% used)" -f $afterMetrics.FreeMB, $afterMetrics.UsedPercent) -ForegroundColor Yellow
-    } else {
+    }
+    else {
         Write-Host "  After        : <unavailable>" -ForegroundColor Yellow
     }
 
@@ -296,5 +303,6 @@ if (-not $Silent) {
     Write-Host ("  Log          : {0}" -f $LogPath) -ForegroundColor DarkGray
     Write-Host ""
 }
+
 
 #endregion Console output

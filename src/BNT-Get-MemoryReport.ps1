@@ -182,8 +182,17 @@ Write-Host ""
 Write-Host "  System Overview" -ForegroundColor White
 Write-Host "  ────────────────────────────────────" -ForegroundColor DarkGray
 Write-Host ("  Total RAM      : {0} GB" -f $totalGB) -ForegroundColor DarkGray
-Write-Host ("  Used           : {0} GB ({1}%)" -f $usedGB, $usedPct) -ForegroundColor `
-    (if ($usedPct -gt 85) { "Red" } elseif ($usedPct -gt 70) { "Yellow" } else { "Green" })
+$usedColor = if ($usedPct -gt 85) {
+    "Red"
+}
+elseif ($usedPct -gt 70) {
+    "Yellow"
+}
+else {
+    "Green"
+}
+
+Write-Host ("  Used           : {0} GB ({1}%)" -f $usedGB, $usedPct) -ForegroundColor $usedColor
 Write-Host ("  Free           : {0} GB" -f $freeGB) -ForegroundColor DarkGray
 
 if ($counterSamples.Count -gt 0) {

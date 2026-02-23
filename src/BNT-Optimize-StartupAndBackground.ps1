@@ -155,7 +155,7 @@ foreach ($regPath in $startupPaths) {
         $items = Get-ItemProperty -Path $regPath -ErrorAction Stop
     }
     catch {
-        Write-Warning "  Could not read $regPath: $_"
+        Write-Warning "  Could not read ${regPath}: $($_)"
         Write-Host ""
         continue
     }
@@ -194,7 +194,7 @@ foreach ($regPath in $startupPaths) {
                     Write-Host "           Removed from $regPath" -ForegroundColor DarkGray
                 }
                 catch {
-                    Write-Warning "           Failed to remove from $regPath: $_"
+                    Write-Warning "           Failed to remove from ${regPath}: $($_)"
                 }
             }
         }

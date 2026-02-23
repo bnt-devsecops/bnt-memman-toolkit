@@ -100,7 +100,6 @@ param(
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
 
-# Progress metadata
 $script:TotalSteps = 7
 $script:CurrentStep = 0
 
@@ -110,11 +109,20 @@ function Set-BntProgress {
         [string]$Status
     )
 
-    $script:CurrentStep++
+    # Increment step but never let it exceed TotalSteps
+    if ($script:CurrentStep -lt $script:TotalSteps) {
+        $script:CurrentStep++
+    }
+
     $percent = [math]::Round(($script:CurrentStep / $script:TotalSteps) * 100, 0)
+
+    # Safety clamp so PercentComplete is always between 0 and 100
+    if ($percent -gt 100) { $percent = 100 }
+    if ($percent -lt 0)   { $percent = 0 }
 
     Write-Progress -Activity $Activity -Status $Status -PercentComplete $percent
 }
+
 
 #region Helper functions
 
@@ -168,9 +176,9 @@ Write-Host ""
 Write-Host "[1/7] Creating directories..." -ForegroundColor Cyan
 
 $dirs = @(
-    $ToolsRoot,
-    Join-Path $ToolsRoot "ISLC",
-    Join-Path $ToolsRoot "RAMMap",
+    $ToolsRoot
+    Join-Path $ToolsRoot "ISLC"
+    Join-Path $ToolsRoot "RAMMap"
     $ScriptsRoot
 )
 
@@ -328,10 +336,10 @@ try {
         -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$clearScript`" -Type standbylist -Silent"
 
     $trigger = New-ScheduledTaskTrigger `
-        -Once `
-        -At (Get-Date) `
-        -RepetitionInterval (New-TimeSpan -Minutes $ScheduleIntervalMinutes) `
-        -RepetitionDuration ([TimeSpan]::MaxValue)
+		-Once `
+		-At (Get-Date) `
+		-RepetitionInterval (New-TimeSpan -Minutes $ScheduleIntervalMinutes) `
+		-RepetitionDuration (New-TimeSpan -Days 365)
 
     $principal = New-ScheduledTaskPrincipal `
         -UserId "SYSTEM" `
