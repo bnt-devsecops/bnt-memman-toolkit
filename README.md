@@ -1,4 +1,7 @@
 # README BNT MemMan Toolkit – Windows RAM & Standby List Optimizer
+<p align="center">
+  <img src="assets/logo-bnt-memman.png" alt="BNT MemMan Toolkit logo" width="450">
+</p>
 
 ```cli
   ____       _              __        ___ _ _ _                       ____  
