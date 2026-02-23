@@ -306,7 +306,7 @@ Roadmap items may evolve based on user feedback and consulting engagements.
 
 - License type: **Proprietary – BRAIN NXTGEN TECHNOLOGIES (BNT)**, using donation-based, perpetual, and subscription models.  
 - Refer to https://brainng.one/licenses for current BNT licensing and usage guidance.  
-- See [LICENSE](LICENSE.md) in this repository for full details specific to BNT MemMan Toolkit.
+- See [LICENSE](LICENSE) in this repository for full details specific to BNT MemMan Toolkit.
 
 [Back to top](#table-of-contents)
 
